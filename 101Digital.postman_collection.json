@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "fa00592e-07ac-4abe-aec7-59854ffa8608",
+		"name": "101Digital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"customerId\": 1,\r\n    \"menuId\": 1,\r\n    \"orderType\": \"TAKE_AWAY\",\r\n    \"pickUpTime\": \"2022-10-08T04:15:00.000\",\r\n    \"menuItemAndQuantityMap\": {\r\n        \"1\": \"2\",\r\n        \"2\": \"3\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/customer/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"customerId\": 1,\r\n    \"menuId\": 1,\r\n    \"orderType\": \"TAKE_AWAY\",\r\n    \"pickUpTime\": \"2022-10-07T12:59:11.332\",\r\n    \"menuItemAndQuantityMap\": {\r\n        \"1\": \"2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/customer/:customer_id/orders?number=0&size=10&sort=id,DESC",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								":customer_id",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "id,DESC"
+								}
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer Order By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"customerId\": 1,\r\n    \"menuId\": 1,\r\n    \"orderType\": \"TAKE_AWAY\",\r\n    \"pickUpTime\": \"2022-10-07T12:59:11.332\",\r\n    \"menuItemAndQuantityMap\": {\r\n        \"1\": \"2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/customer/:customer_id/orders/:order_id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								":customer_id",
+								"orders",
+								":order_id"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "1"
+								},
+								{
+									"key": "order_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Franchise",
+			"item": [
+				{
+					"name": "UpdateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"orderId\": 2,\r\n    \"orderStatus\":\"COMPLETED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/franchise/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"franchise",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customer Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"customerId\": 1,\r\n    \"menuId\": 1,\r\n    \"orderType\": \"TAKE_AWAY\",\r\n    \"pickUpTime\": \"2022-10-07T12:59:11.332\",\r\n    \"menuItemAndQuantityMap\": {\r\n        \"1\": \"2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/customer/:customer_id/orders?number=1&size=1&sort=id,DESC",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								":customer_id",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "id,DESC"
+								}
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer Order By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"franchiseId\": 1,\r\n    \"customerId\": 1,\r\n    \"menuId\": 1,\r\n    \"orderType\": \"TAKE_AWAY\",\r\n    \"pickUpTime\": \"2022-10-07T12:59:11.332\",\r\n    \"menuItemAndQuantityMap\": {\r\n        \"1\": \"2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/customer/:customer_id/orders/:order_id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								":customer_id",
+								"orders",
+								":order_id"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "1"
+								},
+								{
+									"key": "order_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
